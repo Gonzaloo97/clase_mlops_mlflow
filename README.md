@@ -14,20 +14,25 @@ Parte de las dos sesiones previstas en el calendario de ICAI:
 | Sesión | Duración | Foco | Evidencia |
 | --- | ---: | --- | --- |
 | Clase 1 | 2 h | Prototipo frente a producción; ciclo de vida de modelos y de aplicaciones con LLM | Mapa de ciclo de vida y riesgos iniciales |
-| Clase 2 | 1 h + 1 h | Demo de MLflow en Databricks; práctica guiada de tracking, trazas y evaluación | Ficha de proyecto y registro de riesgos enlazado a MLflow |
+| Clase 2 | 1 h + 1 h | Demo de MLflow en Databricks; tracking, selección, Registry, API local, trazas y evaluación | Inicio de ficha de proyecto y evidencia en MLflow |
+
+El ciclo completo de ML se termina como una práctica autónoma de 2–3 horas
+adicionales para no comprimir artificialmente los conceptos en la sesión.
 
 Las prácticas usan el servidor MLflow gestionado de Databricks y cubren tres
 vistas del mismo ciclo de evidencia. En Free Edition cada notebook mantiene su
 propio experimento, por lo que los *runs* de MLOps y las trazas/evaluaciones de
 AgentOps/LLMOps se consultan en sus respectivos notebooks:
 
-1. **MLOps clásico:** parámetros, métricas, artefactos y comparación de runs.
+1. **MLOps clásico:** datos, runs, artefactos, modelos, selección, test, Registry
+   y una API local observable que carga el pickle ganador.
 2. **AgentOps:** trazas de la aplicación, enrutado y herramientas.
 3. **LLMOps:** evaluación reproducible basada en datos y un scorer de código.
 
-No se registran modelos ni se despliega ningún endpoint en la semana 01. Esos
-temas se abordan cuando el alumnado ya ha separado entrenamiento, inferencia y
-contratos de datos.
+El Registry usa Unity Catalog. El despliegue de ML es deliberadamente local al
+driver (`127.0.0.1`) y efímero: enseña contrato, health check, errores y
+telemetría sin depender de infraestructura de pago. No es un endpoint público
+ni persistente.
 
 ## Uso en Databricks
 

@@ -4,9 +4,9 @@
 
 ## Resultado de aprendizaje
 
-El alumnado crea dos *runs* comparables en el experimento de su propio notebook
-de Databricks Free Edition, inspecciona una traza de agente y ejecuta una
-evaluación de LLMOps sin depender de un endpoint de pago.
+El alumnado crea un lote de runs comparables, aplica un gate, registra el
+ganador y prueba su API local en Databricks Free Edition. También inspecciona
+una traza de agente y ejecuta una evaluación LLMOps sin un endpoint de pago.
 
 ## Secuencia
 
@@ -19,22 +19,24 @@ aplicación y *scorer* de evaluación.
 
 ### Construcción en directo (45 min)
 
-Ejecuta primero
+Ejecuta las secciones 1–8 de
 [`01_tracking_mlop_solucion.ipynb`](../../notebooks/01_tracking_mlop_solucion.ipynb)
-y muestra los parámetros, artefactos de riesgos, F1, recall y ROC AUC. Después
+y muestra datos, parámetros, artefactos, comparación y gate. Resume las
+secciones Registry/API, que se terminarán como trabajo autónomo. Después
 ejecuta el modo determinista de
 [`02_agent_llmops_solucion.ipynb`](../../notebooks/02_agent_llmops_solucion.ipynb)
 y abre la traza resultante.
 
 ### Extensión independiente (45 min)
 
-El alumnado completa las versiones sin resolver
+El alumnado inicia las versiones sin resolver
 [`01_tracking_mlop.ipynb`](../../notebooks/01_tracking_mlop.ipynb) y
 [`02_agent_llmops.ipynb`](../../notebooks/02_agent_llmops.ipynb), siguiendo la
-[práctica de semana 01](../../exercises/01_project_risks_and_tracking.md).
+[práctica de semana 01](../../exercises/01_project_risks_and_tracking.md). El
+ciclo ML completo requiere 2–3 horas adicionales fuera de clase.
 
 ### Debrief (15 min)
 
-Compara una tabla de dos *runs* y una evaluación. Cierra con dos preguntas:
-qué evidencia falta antes de producción y qué limitación del *scorer* requiere
-una capa adicional de evaluación.
+Compara el lote de candidatos, la versión `Champion`, el run de despliegue y
+una evaluación. Cierra preguntando qué evidencia falta antes de producción y
+qué limitación del *scorer* requiere otra capa de evaluación.

@@ -1,12 +1,12 @@
 # Práctica 01 — Evidencia antes de producción
 
-**Duración:** 60 minutos · **Modalidad:** individual o por parejas
+**Duración:** 3–4 horas · **Modalidad:** individual o por parejas
 
 ## Objetivo
 
-Transformar un entrenamiento de notebook en una evidencia operable: un *run*
-comparable, un registro de riesgos como artefacto y una primera traza con
-evaluación de agente.
+Transformar un entrenamiento en un ciclo observable: candidatos comparables,
+selección sin contaminar test, versión registrada, API local del pickle ganador
+y evidencia operativa. Completar después una traza y evaluación de agente.
 
 ## Antes de empezar
 
@@ -18,20 +18,16 @@ evaluación de agente.
 3. No pegues claves, tokens, correos, datos de pacientes ni contenido sensible
    en ninguna celda. MLflow registra lo que le entregas.
 
-## Parte A — Tracking de MLOps (30 min)
+## Parte A — Ciclo de ML con MLflow (150–210 min)
 
-1. Ejecuta `notebooks/01_tracking_mlop.ipynb` con tu alias. Reutiliza el caso
-   de clasificación cardiovascular de `data/raw/heart.csv`; no lo uses para
-   decisiones clínicas.
-2. Cambia **una** configuración que afecte al modelo (por ejemplo,
-   `max_depth` o `min_samples_leaf`) y lanza un segundo *run*.
-3. Compara `test_f1`, `test_recall` y `test_roc_auc` desde la UI de MLflow. No declares un
-   ganador sólo con una métrica: explica qué información falta.
-4. Adapta `examples/s01_project_record.yaml` a tu caso y registra su contenido
-   como artefacto JSON o YAML. Incluye al menos tres riesgos, un propietario y
-   una mitigación por riesgo.
+1. Completa `notebooks/01_tracking_mlop.ipynb` siguiendo su guía específica.
+2. Genera seis candidatos con evidencia completa y el mismo split.
+3. Aplica el gate sobre validación y abre test sólo para el ganador.
+4. Registra el ganador, asigna `Champion` y verifica carga por alias.
+5. Sirve el pickle en localhost, prueba éxito/error, registra señales y apágalo.
+6. Adapta `examples/s01_project_record.yaml` y regístralo como artefacto.
 
-## Parte B — AgentOps y LLMOps (20 min)
+## Parte B — AgentOps y LLMOps (30–45 min)
 
 1. Ejecuta `notebooks/02_agent_llmops.ipynb` con `USE_LLM = False`.
 2. Abre una traza de `course_agent` y localiza sus pasos `route_question` y
@@ -43,13 +39,15 @@ evaluación de agente.
 4. Sólo si el docente lo indica, habilita el endpoint de Foundation Model y
    repite una pregunta. No cambies la configuración de autenticación.
 
-## Parte C — Entregable y debrief (10 min)
+## Parte C — Entregable y debrief (20 min)
 
 Entrega una ficha corta (Markdown, YAML o enlace a su artefacto de MLflow) con:
 
 - alias de equipo, nombre y enlace del experimento;
-- nombres de los dos *runs* y sus métricas;
-- decisión provisional y la evidencia que todavía falta;
+- `batch.id`, tabla de candidatos y regla del gate;
+- ganador, métricas de validación/test y evidencia que todavía falta;
+- nombre, versión y alias del modelo registrado;
+- run de deployment y resultados 200/200/400/400 de la API;
 - tres riesgos priorizados y su propietario;
 - enlace o identificador de una traza y el límite del *scorer* usado.
 
@@ -57,10 +55,11 @@ Entrega una ficha corta (Markdown, YAML o enlace a su artefacto de MLflow) con:
 
 | Criterio | Puntos |
 | --- | ---: |
-| Dos runs comparables, con parámetros y métricas visibles | 3 |
-| Registro de riesgos concreto y enlazado como artefacto | 3 |
-| Lectura correcta de una traza y de su límite de evaluación | 2 |
-| Decisión prudente, sin secretos ni afirmaciones de uso clínico | 2 |
+| Seis runs comparables con inputs, parámetros, métricas y artefactos | 2 |
+| Gate reproducible y test reservado únicamente al ganador | 2 |
+| Registry con firma, versión, tags y alias `Champion` | 2 |
+| API local: pickle, contrato, pruebas, observabilidad y apagado | 2 |
+| Trazas/evaluación y decisión prudente sin secretos ni uso clínico | 2 |
 
 ## Extensión si terminas antes
 
