@@ -1,0 +1,39 @@
+# Copia esta plantilla en tu entrega. No incluyas datos personales, tokens,
+# nombres de pacientes ni contenido sensible de prompts.
+project:
+  name: "clasificacion_riesgo_cardiovascular_didactica"
+  team_alias: "pareja-07"
+  decision_supported: "comparar configuraciones con F1, recall y ROC AUC de prueba"
+  users_affected: "personal clínico; decisión siempre supervisada"
+data:
+  source: "data/raw/heart.csv (caso existente del repositorio)"
+  contains_personal_data: false
+  limitations:
+    - "Dataset didáctico; no representa una población clínica real."
+    - "No puede utilizarse para diagnóstico ni para tomar decisiones clínicas."
+evidence:
+  mlflow_experiment: "experimento asociado al notebook de Free Edition"
+  run_name: "pareja-07-baseline"
+  metrics_to_compare:
+    - "test_f1"
+    - "test_recall"
+    - "test_roc_auc"
+risks:
+  - id: R1
+    risk: "Uso clínico fuera del contexto docente"
+    impact: high
+    likelihood: medium
+    owner: "equipo de producto"
+    mitigation: "Aviso explícito, supervisión humana y prohibición de uso clínico."
+  - id: R2
+    risk: "Un secreto aparece en un parámetro, tag, artefacto o traza"
+    impact: high
+    likelihood: low
+    owner: "responsable técnico"
+    mitigation: "Usar identidad del entorno o Secrets; revisar logs antes de compartir."
+  - id: R3
+    risk: "Una respuesta de agente no está respaldada por el contexto"
+    impact: medium
+    likelihood: medium
+    owner: "responsable de IA"
+    mitigation: "Trazas, conjunto de evaluación y revisión humana."

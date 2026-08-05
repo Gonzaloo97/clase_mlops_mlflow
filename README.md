@@ -1,41 +1,65 @@
-<img src="img/logo-the-valleyDBS_horizontal.png" alt="Alt text" width="800" height="400"/>
+# Operación de Modelos — MUIAAP (ICAI)
 
-# Pipelines y Gestión del Ciclo de Vida de los Modelos
+Material práctico para la asignatura de Operación de Modelos del Máster
+Universitario en Inteligencia Artificial Aplicada. El curso sigue un único hilo:
+pasar de un experimento reproducible a un servicio observable, seguro y
+desplegable.
 
-Este repositorio contiene un proyecto de **Pipelines y Gestión del Ciclo de Vida de los Modelos**, una plataforma de código abierto para la gestión del ciclo de vida de Machine Learning.
+## Semana 01: MLflow en Databricks
 
-## Prácticas Incluidas
+El material activo de la primera semana está en
+[`modules/01-mlflow-databricks-foundations/`](modules/01-mlflow-databricks-foundations/).
+Parte de las dos sesiones previstas en el calendario de ICAI:
 
-Se incluyen dos prácticas principales:
+| Sesión | Duración | Foco | Evidencia |
+| --- | ---: | --- | --- |
+| Clase 1 | 2 h | Prototipo frente a producción; ciclo de vida de modelos y de aplicaciones con LLM | Mapa de ciclo de vida y riesgos iniciales |
+| Clase 2 | 1 h + 1 h | Demo de MLflow en Databricks; práctica guiada de tracking, trazas y evaluación | Ficha de proyecto y registro de riesgos enlazado a MLflow |
 
-1. **Predicción de Diabetes**
-2. **Predicción de Infartos**
+Las prácticas usan el servidor MLflow gestionado de Databricks y cubren tres
+vistas del mismo ciclo de evidencia. En Free Edition cada notebook mantiene su
+propio experimento, por lo que los *runs* de MLOps y las trazas/evaluaciones de
+AgentOps/LLMOps se consultan en sus respectivos notebooks:
 
-Estas prácticas cubren los siguientes aspectos:
-- Registro de experimentos
-- Métricas
-- Manejo de modelos
-- Despliegue local de endpoints
+1. **MLOps clásico:** parámetros, métricas, artefactos y comparación de runs.
+2. **AgentOps:** trazas de la aplicación, enrutado y herramientas.
+3. **LLMOps:** evaluación reproducible basada en datos y un scorer de código.
 
-## Estructura del Proyecto
+No se registran modelos ni se despliega ningún endpoint en la semana 01. Esos
+temas se abordan cuando el alumnado ya ha separado entrenamiento, inferencia y
+contratos de datos.
 
-```plaintext
-.gitignore
-data/
-    raw/
-        heart.csv
-img/
-notebooks/
-    1-introduccion-mlflow.ipynb
-    2-entrena-tu-primer-modelo.ipynb
-    3-entrega-y-despliega-con-firma.ipynb
-    3.1-inferencia-experimento.ipynb
-    4-ejercicio-the-irish_solucion.ipynb
-    4-ejercicio-the-irish.ipynb
-    5-prediccion-infarto_solucion.ipynb
-    5-prediccion-infarto.ipynb
-    6-registra-tu-modelo.ipynb
-    artifacts/
-        text_file.txt
-README.md
-requirements.txt
+## Uso en Databricks
+
+1. Cada estudiante usa su workspace personal de Databricks Free Edition. MLflow
+   registra los runs en el experimento asociado a cada notebook, sin permisos
+   compartidos, siguiendo la guía de
+   [preparación de la semana 01](modules/01-mlflow-databricks-foundations/instructor/README.md).
+2. Abre el repositorio como Databricks Git Folder. Así los notebooks encuentran
+   el caso existente `data/raw/heart.csv`. Si los subes manualmente, sube también
+   el CSV y actualiza `DATASET_PATH`.
+3. Entrega las versiones sin resolver `01_tracking_mlop.ipynb` y
+   `02_agent_llmops.ipynb`. Conserva los pares `_solucion.ipynb` para el docente
+   y la corrección.
+
+Las credenciales no se escriben en los notebooks. Dentro de Databricks se usa
+la autenticación configurada por el entorno; fuera del workspace deben
+configurarse las variables de Databricks de forma segura.
+
+## Material histórico
+
+Los notebooks de la carpeta `notebooks/` se conservan como referencia de un
+curso anterior. Usan dependencias y patrones de MLflow anteriores y no son la
+secuencia recomendada para el curso de ICAI. No los modifiques ni los ejecutes
+en clase sin adaptarlos al runtime actual de Databricks.
+
+## Estructura
+
+```text
+modules/
+  01-mlflow-databricks-foundations/
+    notebooks/       # Notebooks Databricks guiados
+    exercises/       # Trabajo independiente y rúbrica
+    examples/        # Plantillas y evidencias esperadas
+    instructor/      # Preparación del workspace y guion docente
+```
