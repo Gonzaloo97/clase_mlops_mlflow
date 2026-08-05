@@ -28,7 +28,7 @@ y [Sesión 02](sessions/02-mlflow-free-edition/README.md).
 ### 2. Construcción en directo — Clase 2, primera hora (60 min)
 
 El docente ejecuta las celdas esenciales de
-[`notebooks/01_tracking_mlop_solucion.ipynb`](notebooks/01_tracking_mlop_solucion.ipynb): usa el
+[`notebooks/01_tracking_mlops_solucion.ipynb`](notebooks/01_tracking_mlops_solucion.ipynb): usa el
 experimento del notebook, crea seis candidatos reproducibles y muestra cómo los
 inputs, firma, artefactos y métricas permiten comparar. Después aplica el gate,
 registra `Champion` y prueba una API HTTP local que carga el pickle ganador.
@@ -53,11 +53,11 @@ pegada en el notebook.
 
 | Recurso | Uso |
 | --- | --- |
-| `notebooks/01_tracking_mlop.ipynb` | Ciclo ML completo sin resolver; 3–4 horas. |
-| `notebooks/01_tracking_mlop_solucion.ipynb` | Solución docente de MLOps. |
+| `notebooks/01_tracking_mlops.ipynb` | Ciclo ML completo sin resolver; 3–4 horas. |
+| `notebooks/01_tracking_mlops_solucion.ipynb` | Solución docente de MLOps. |
 | `notebooks/02_agent_llmops.ipynb` | Práctica AgentOps/LLMOps sin resolver; 60–90 minutos. |
 | `notebooks/02_agent_llmops_solucion.ipynb` | Solución docente de AgentOps/LLMOps. |
-| `exercises/01_tracking_mlop/README.md` | Guía de alumno para el tracking clásico. |
+| `exercises/01_tracking_mlops/README.md` | Guía de alumno para el tracking clásico. |
 | `exercises/02_agent_llmops/README.md` | Guía de alumno para trazas y evaluación. |
 | `exercises/01_project_risks_and_tracking.md` | Entregable individual o por pareja. |
 | `examples/s01_project_record.yaml` | Plantilla de la ficha de proyecto y riesgos. |

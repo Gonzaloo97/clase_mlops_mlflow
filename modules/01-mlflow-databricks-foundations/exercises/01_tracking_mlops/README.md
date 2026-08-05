@@ -31,7 +31,7 @@ reinicias desde el principio se generará otro lote.
    compute serverless.
 2. Abre el repositorio como Databricks Git Folder para conservar la ruta a
    `data/raw/heart.csv`.
-3. Abre `notebooks/01_tracking_mlop.ipynb`, la versión sin resolver. Consulta
+3. Abre `notebooks/01_tracking_mlops.ipynb`, la versión sin resolver. Consulta
    la solución sólo después de entregar tu intento.
 4. Si subiste la libreta manualmente, sube también el CSV y cambia
    `DATASET_PATH`. Nunca uses información real de pacientes.

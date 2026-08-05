@@ -20,7 +20,7 @@ aplicación y *scorer* de evaluación.
 ### Construcción en directo (45 min)
 
 Ejecuta las secciones 1–8 de
-[`01_tracking_mlop_solucion.ipynb`](../../notebooks/01_tracking_mlop_solucion.ipynb)
+[`01_tracking_mlops_solucion.ipynb`](../../notebooks/01_tracking_mlops_solucion.ipynb)
 y muestra datos, parámetros, artefactos, comparación y gate. Resume las
 secciones Registry/API, que se terminarán como trabajo autónomo. Después
 ejecuta el modo determinista de
@@ -30,7 +30,7 @@ y abre la traza resultante.
 ### Extensión independiente (45 min)
 
 El alumnado inicia las versiones sin resolver
-[`01_tracking_mlop.ipynb`](../../notebooks/01_tracking_mlop.ipynb) y
+[`01_tracking_mlops.ipynb`](../../notebooks/01_tracking_mlops.ipynb) y
 [`02_agent_llmops.ipynb`](../../notebooks/02_agent_llmops.ipynb), siguiendo la
 [práctica de semana 01](../../exercises/01_project_risks_and_tracking.md). El
 ciclo ML completo requiere 2–3 horas adicionales fuera de clase.

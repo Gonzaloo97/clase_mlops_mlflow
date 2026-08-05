@@ -43,7 +43,7 @@ ni persistente.
 2. Abre el repositorio como Databricks Git Folder. Así los notebooks encuentran
    el caso existente `data/raw/heart.csv`. Si los subes manualmente, sube también
    el CSV y actualiza `DATASET_PATH`.
-3. Entrega las versiones sin resolver `01_tracking_mlop.ipynb` y
+3. Entrega las versiones sin resolver `01_tracking_mlops.ipynb` y
    `02_agent_llmops.ipynb`. Conserva los pares `_solucion.ipynb` para el docente
    y la corrección.
 

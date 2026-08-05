@@ -20,7 +20,7 @@ y evidencia operativa. Completar después una traza y evaluación de agente.
 
 ## Parte A — Ciclo de ML con MLflow (150–210 min)
 
-1. Completa `notebooks/01_tracking_mlop.ipynb` siguiendo su guía específica.
+1. Completa `notebooks/01_tracking_mlops.ipynb` siguiendo su guía específica.
 2. Genera seis candidatos con evidencia completa y el mismo split.
 3. Aplica el gate sobre validación y abre test sólo para el ganador.
 4. Registra el ganador, asigna `Champion` y verifica carga por alias.
